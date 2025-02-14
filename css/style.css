@@ -52,11 +52,11 @@ p {
     background-color: #fc90d8;
 }
 
-.card:active .front {
+.card:hover .front {
     transform: rotateY(180deg);
 }
 
-.card:active .back {
+.card:hover .back {
     transform: rotateY(0deg);
 }
 
