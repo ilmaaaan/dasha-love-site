@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fa7fdf;
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    border: 5px solid red;
+    background-color:#fc90d8;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+}
+
+.front {
+    flex-direction: column;
+    text-align: center;
+}
+
+.back {
+    transform: rotateY(180deg);
+    flex-direction: column;
+    text-align: center;
+    background-color: #fc90d8;
+}
+
+.card:active .front {
+    transform: rotateY(180deg);
+}
+
+.card:active .back {
+    transform: rotateY(0deg);
+}
+
+.random-box {
+    position: absolute;
+    padding: 1px;
+    margin: 1px;
+    color: red;
+    background-color: rgba(0, 0, 0, 0);;
+    border-radius: 10px;
+    font-size: 100px;
+    transition: opacity 0.5s;
+    opacity: 0; /* Изначально скрыт */
+}
